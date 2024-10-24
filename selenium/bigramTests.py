@@ -25,7 +25,7 @@ class TestBigramParser(unittest.TestCase):
         expectedHtml="Please input something above."
         self.driver.get("https://ayres-net.com/bigramParser")
         self.driver.set_window_size(1728, 994)
-
+        time.sleep(1)
         self.driver.find_element(By.ID, "largeInput").click()
         self.driver.find_element(By.ID, "largeInput").send_keys(words)
         self.driver.find_element(By.ID, "processInput").click()
@@ -41,7 +41,7 @@ class TestBigramParser(unittest.TestCase):
         expectedHtml="Your string must include more than one word."
         self.driver.get("https://ayres-net.com/bigramParser")
         self.driver.set_window_size(1728, 994)
-
+        time.sleep(1)
         self.driver.find_element(By.ID, "largeInput").click()
         self.driver.find_element(By.ID, "largeInput").send_keys(words)
         self.driver.find_element(By.ID, "processInput").click()
@@ -57,7 +57,7 @@ class TestBigramParser(unittest.TestCase):
         expectedHtml="Bigram Count\nhello world 1"
         self.driver.get("https://ayres-net.com/bigramParser")
         self.driver.set_window_size(1728, 994)
-
+        time.sleep(1)
         self.driver.find_element(By.ID, "largeInput").click()
         self.driver.find_element(By.ID, "largeInput").send_keys(words)
         self.driver.find_element(By.ID, "processInput").click()
@@ -73,7 +73,7 @@ class TestBigramParser(unittest.TestCase):
         expectedHtml="Bigram Count\nthe quick 2\nquick brown 1\nbrown fox 1\nfox and 1\nand the 1\nquick blue 1\nblue hare 1"
         self.driver.get("https://ayres-net.com/bigramParser")
         self.driver.set_window_size(1728, 994)
-
+        time.sleep(1)
         self.driver.find_element(By.ID, "largeInput").click()
         self.driver.find_element(By.ID, "largeInput").send_keys(words)
         self.driver.find_element(By.ID, "processInput").click()
@@ -93,6 +93,7 @@ class TestBigramParser(unittest.TestCase):
         self.driver.get("https://ayres-net.com/bigramParser")
         self.driver.set_window_size(1728, 994)
 
+        time.sleep(1)
         self.driver.find_element(By.ID, "largeInput").click()
         self.driver.find_element(By.ID, "largeInput").send_keys(words)
         self.driver.find_element(By.ID, "processInput").click()
@@ -104,6 +105,24 @@ class TestBigramParser(unittest.TestCase):
         self.assertEqual(child_text, expectedHtml, "test_bigram_parser_many_words_with_carriage_return: Results has the wrong value.")
 
         print("test_bigram_parser_many_words_with_carriage_return Success")
+
+    def test_bigram_parser_many_words_with_space_at_end(self):
+            words="The quick brown fox and the\nquick blue hare. "
+            expectedHtml="Bigram Count\nthe quick 2\nquick brown 1\nbrown fox 1\nfox and 1\nand the 1\nquick blue 1\nblue hare 1"
+            self.driver.get("https://ayres-net.com/bigramParser")
+            self.driver.set_window_size(1728, 994)
+            time.sleep(1)
+            self.driver.find_element(By.ID, "largeInput").click()
+            self.driver.find_element(By.ID, "largeInput").send_keys(words)
+            self.driver.find_element(By.ID, "processInput").click()
+
+            child_text = self.driver.find_element(By.ID, "outputField").text
+
+            print("child_text")
+            print(child_text)
+            self.assertEqual(child_text, expectedHtml, "test_bigram_parser_many_words_with_space_at_end: Results has the wrong value.")
+
+            print("test_bigram_parser_many_words_with_space_at_end Success")
 
 
     def tearDown(self):

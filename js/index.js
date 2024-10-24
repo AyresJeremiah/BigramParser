@@ -37,6 +37,7 @@ function parseBigram(text){
     let bigrams = [];
     let cleanedStr = text.replace(/\n/g, ' ');
     cleanedStr = cleanedStr.replace(/[^a-zA-Z0-9 ]/g, '').toLowerCase();
+
     let words = cleanedStr.split(/\s+/);
 
     //Check for empty words
