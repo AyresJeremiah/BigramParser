@@ -40,6 +40,7 @@ function parseBigram(text){
 
     let words = cleanedStr.split(/\s+/);
 
+    
     let newWords = [];
     for (let i = 0; i < words.length-1; i++) {
         if(words[i].length >0){
