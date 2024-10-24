@@ -1,0 +1,7 @@
+# The files in this directory are for conducting selenium tests.
+
+# Run these commands to build your virtual environment and run the tests:
+python3 -m venv vertenv
+source vertenv/bin/activate
+pip install -r requirements.txt
+python3 bigramTests.py

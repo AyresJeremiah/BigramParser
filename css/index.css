@@ -1,0 +1,9 @@
+body{
+    background: #89b0e3;
+}
+#testResultsContainer{
+    display: none;
+}
+#runTestCases{
+    display: none;
+}
