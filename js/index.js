@@ -40,6 +40,14 @@ function parseBigram(text){
 
     let words = cleanedStr.split(/\s+/);
 
+    let newWords = [];
+    for (let i = 0; i < words.length-1; i++) {
+        if(words[i].length >0){
+            newWords.push(words[i]);
+        }
+    }
+    words = newWords;
+
     if(words.length > 1) {
         for (let i = 0; i < words.length-1; i++) {
             let index = indexOfValueInJsonArray(bigrams, words[i] + " " + words[i+1]);
