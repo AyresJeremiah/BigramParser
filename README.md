@@ -20,8 +20,6 @@ The bigrams and their counts would be:
 Bigram Parsing: Automatically detects and counts adjacent word pairs.
 Histogram Output: Visualizes the frequency of each bigram in the text input.
 Edge Case Handling: Designed to handle punctuation, case sensitivity, and extra spaces.
-Live Demo
-You can try out the web app here: Bigram Parser
 
 ## How to Use
 Visit the Web App: Go to https://ayres-net.com/bigramParser/.
