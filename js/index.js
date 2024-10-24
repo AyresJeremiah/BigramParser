@@ -42,7 +42,7 @@ function parseBigram(text){
 
     //Check for empty words
     let newWords = [];
-    for (let i = 0; i < words.length-1; i++) {
+    for (let i = 0; i < words.length; i++) {
         if(words[i].length >0){
             newWords.push(words[i]);
         }
